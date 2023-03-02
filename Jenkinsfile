@@ -49,7 +49,7 @@ pipeline{
                                 steps{
                                         sh '''
                                         cd ./kubernetes
-                                        sed -e 's,{MYSQL_PWD},'$PWORD',g;' -e 's,{MYSQL_IP},'$IP',g;' ./secret/secrets.yaml | kubectl apply -f -
+                                        sed -e 's,{MYSQL_PWD},'$PWORD',g;' -e 's,{MYSQL_IP},'$IP',g;' ./secret/secret.yaml | kubectl apply -f -
                                         kubectl apply -f .
                                         kubectl rollout restart deployment frontend
                                         kubectl rollout restart deployment backend
