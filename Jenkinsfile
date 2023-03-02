@@ -9,7 +9,7 @@ pipeline{
                                 steps{
                                         sh '''
                                                 image="eu.gcr.io/lbg-cloud-incubation/frontend"
-                                                docker build -t $image:build-$BUILD_NUMBER -t $image:latest /var/lib/jenkins/workspace/$JOB_BASE_NAME/frontend
+                                                docker build -t $image:build-$BUILD_NUMBER -t $image:latest ./frontend
                                                 docker push $image:build-$BUILD_NUMBER
                                                 docker push $image:latest
                                         '''
@@ -19,7 +19,7 @@ pipeline{
                                 steps{
                                         sh '''
                                                 image="eu.gcr.io/lbg-cloud-incubation/rand1"
-                                                docker build -t $image:build-$BUILD_NUMBER -t $image:latest /var/lib/jenkins/workspace/$JOB_BASE_NAME/randapp1
+                                                docker build -t $image:build-$BUILD_NUMBER -t $image:latest ./randapp1
                                                 docker push $image:build-$BUILD_NUMBER
                                                 docker push $image:latest
                                         '''
@@ -29,7 +29,7 @@ pipeline{
                                 steps{
                                         sh '''
                                                 image="eu.gcr.io/lbg-cloud-incubation/rand2"
-                                                docker build -t $image:build-$BUILD_NUMBER -t $image:latest /var/lib/jenkins/workspace/$JOB_BASE_NAME/randapp2
+                                                docker build -t $image:build-$BUILD_NUMBER -t $image:latest ./randapp2
                                                 docker push $image:build-$BUILD_NUMBER
                                                 docker push $image:latest
                                         '''
@@ -39,7 +39,7 @@ pipeline{
                                 steps{
                                         sh '''
                                                 image="eu.gcr.io/lbg-cloud-incubation/backend"
-                                                docker build -t $image:build-$BUILD_NUMBER -t $image:latest /var/lib/jenkins/workspace/$JOB_BASE_NAME/backend
+                                                docker build -t $image:build-$BUILD_NUMBER -t $image:latest ./backend
                                                 docker push $image:build-$BUILD_NUMBER
                                                 docker push $image:latest
                                         '''
