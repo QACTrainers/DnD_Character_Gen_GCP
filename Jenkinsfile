@@ -1,10 +1,10 @@
 pipeline{
                 agent any
-                stages{
-                        environment {
+                environment {
                                 IP=credentials('ip')
                                 PWORD=credentials('password')
                         }
+        stages{
                         stage('--Front End--'){
                                 steps{
                                         sh '''

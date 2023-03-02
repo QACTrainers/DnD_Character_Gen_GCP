@@ -8,7 +8,7 @@ terraform {
 }
 
 provider "google" {
-    project     = "teaching-resources-351808"
+    project     = "lbg-cloud-incubation"
     region      = "europe-west2"
     zone        = "europe-west2-c"
     scopes      = ["https://www.googleapis.com/auth/cloud-platform"]
